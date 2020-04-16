@@ -52,7 +52,7 @@ def getRandomWord(wordDict):
     # Second, randomly select a word from the key's list in the dictionary:
     wordIndex = random.randint(0, len(wordDict[wordKey]) - 1)
 
-    return [wordDict[wordKey][wordIndex], wordKey]
+    return wordDict[wordKey][wordIndex]
 
 # def getRandomWord(wordList):
 #     # This function returns a random string from the passed list of strings.
@@ -130,9 +130,7 @@ while True:
         # Check if player has guessed too many times and lost.
         if len(missedLetters) == len(HANGMAN_PICS) - 1:
             displayBoard(missedLetters, correctLetters, secretWord)
-            print('You have run out of guesses!\nAfter ' +
-                str(len(missedLetters)) + ' missed guesses and ' +
-                str(len(correctLetters)) + ' correct guesses, the word was "' + secretWord + '"')
+            print('You have run out of guesses!\nAfter ' + str(len(missedLetters)) + ' missed guesses and ' + str(len(correctLetters)) + ' correct guesses, the word was "' + secretWord + '"')
             gameIsDone = True
 
     # Ask the player if they want to play again (but only if the game is done).
